@@ -2,19 +2,19 @@ package duck;
 import java.awt.Color;
 
 public class Leg {
-	private int x, y, x1, y1;
+	private int x, y, width, height;
 	
-	public Leg (int x, int y, int x1, int y1) {
+	public Leg (int x, int y, int width, int height) {
 		this.x = x;
 		this.y = y;
-		this.x1 = x1;
-		this.y1 = y1;
+		this.width = width;
+		this.height = height;
 	}
 
 	public void draw() {
 		Canvas.PEN.setColor(Color.orange);
-		Canvas.PEN.drawLine(x, y, x1, y1);
-		Canvas.PEN.fillRect(x1-20, y1, 20, 10);
+		Canvas.PEN.drawLine(x, y, x, y + 50);
+		Canvas.PEN.fillRect(x-29, y + 50, width / 5, height / 5);
 		Canvas.PEN.setColor(Color.black);	// resetting the color to the default
 	}
 }
