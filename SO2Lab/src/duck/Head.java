@@ -16,7 +16,7 @@ public class Head {
 		this.width = width;
 		this.height = height;
 		
-		beak = new Beak(x, y + 15, x - 15, y + 20, x ,y + 25);
+		beak = new Beak(x, y + (height / 3), x - (width / 3), y + (height / 3), x, y + (width / 2));
 		neck = new Neck(x + headWidth, y + (height - height / 3), width - (width / 3), height);
 		eye = new Eye(x + ((width/4 ) / 10), y + (y / 20), width / 4, height / 4);
 	}

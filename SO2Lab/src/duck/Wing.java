@@ -12,18 +12,18 @@ public class Wing {
 	}
 	
 	public void draw() {
+		int x0 = x + (width / 3);
         int x1 = x + width;
-        int y1 = y;
         int x2 = (int) (x + width /2);
-        System.out.println("orig x2: " + x2);
-        System.out.println("x + width: " + (x + width));
+        int y0 = y + 1;
+        int y1 = y;
         int y2 = (int) (y + height /2);
-        System.out.println("orig y2: " + y2);
-        System.out.println("x + height: " + (y + height));
+        int xArr[] = {x0, x1, x2};
+        int yArr[] = {y0, y1, y2};
 		
-        Canvas.PEN.drawPolygon(new int[] { x + (width / 3), x1, x2 }, new int[] { y + 1, y1, y2 }, 3);
+        Canvas.PEN.drawPolygon(xArr, yArr, 3);
         Canvas.PEN.setColor(Color.white);
-        Canvas.PEN.fillPolygon(new int[] { x + (width / 3), x1, x2 }, new int[] { y + 1, y1, y2 }, 3);
+        Canvas.PEN.fillPolygon(xArr, yArr, 3);
         Canvas.PEN.setColor(Color.black); // resetting the color to the default
 	}
 }

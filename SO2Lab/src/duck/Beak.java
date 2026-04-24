@@ -14,9 +14,11 @@ public class Beak {
 	}
 	
 	public void draw() {
-		Canvas.PEN.drawPolygon(new int[] {x, x1, x2}, new int[] {y, y1, y2}, 3);
+		int xArr[] = {x, x1, x2};
+		int yArr[] = {y, y1, y2};
+		Canvas.PEN.drawPolygon(xArr, yArr, 3);
 		Canvas.PEN.setColor(Color.orange);
-		Canvas.PEN.fillPolygon(new int[] {x, x1, x2}, new int[] {y, y1, y2}, 3);
+		Canvas.PEN.fillPolygon(xArr, yArr, 3);
 		Canvas.PEN.setColor(Color.black);
 	}
 }
