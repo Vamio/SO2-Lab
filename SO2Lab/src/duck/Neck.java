@@ -5,7 +5,7 @@ import java.awt.Color;
 public class Neck {
 	private int x, y, height, width;
 	
-	public Neck(int x, int y, int height, int width) {
+	public Neck(int x, int y, int width, int height) {
 		this.x = x;
 		this.y = y;
 		this.height = height;

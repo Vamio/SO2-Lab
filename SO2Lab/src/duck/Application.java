@@ -5,8 +5,13 @@ public class Application {
 	private Duck anton;
 	
 	public Application() {
-		alexey = new Duck(200, 300, 10, 60); // x, y, width, height
-		anton = new Duck(500, 300, 150, 60);
+		int width = 150;
+		int height = 60;
+		int x = 200;
+		int y = 300;
+		
+		alexey = new Duck(600, 300, 15, 6); // x, y, width, height
+		anton = new Duck(x, y, width, height);
 	}
 	
 	public void draw() {
