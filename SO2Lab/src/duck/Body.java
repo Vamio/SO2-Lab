@@ -15,8 +15,9 @@ public class Body {
 		this.width = width;
 		this.height = height;
 		
-		legLeft = new Leg(x + 40, y + 57, width, height);
-		legRight = new Leg(x + 80, y + 60, width, height);
+		int leftFoot = width / 3;
+		legLeft = new Leg(x + leftFoot, y + height, width, height);
+		legRight = new Leg(x + leftFoot * 2, y + height, width, height);
 		wing = new Wing(x, y, width, height);
 		tail = new Tail(x + 145, y + 20, x + 180, y + 40, x + 140, y + 44);
 	}
