@@ -10,7 +10,7 @@ public class Application {
 		int x = 200;
 		int y = 300;
 		
-		alexey = new Duck(600, 300, 15, 6); // x, y, width, height
+		alexey = new Duck(600, 300, 50, 20); // x, y, width, height
 		anton = new Duck(x, y, width, height);
 	}
 	
