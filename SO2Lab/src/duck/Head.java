@@ -9,13 +9,12 @@ public class Head {
 	private Eye eye;
 	
 	public Head(int x, int y, int width, int height) {
-		int headWidth = width/3;
-		
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
 		
+		int headWidth = width / 3;
 		beak = new Beak(x + (width / 20), y + (height / 3), x - (width / 3), y + (height / 3), x, y + (width / 2));
 		neck = new Neck(x + headWidth, y + (height - height / 3), width - (width / 3), height);
 		eye = new Eye(x + (width / 4), y + (height / 4), width / 4, height / 4);

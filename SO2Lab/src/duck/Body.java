@@ -18,8 +18,10 @@ public class Body {
 		int leftFoot = width / 3;
 		legLeft = new Leg(x + leftFoot, y + height, width, height);
 		legRight = new Leg(x + leftFoot * 2, y + height, width, height);
-		wing = new Wing(x, y, width, height);
-		tail = new Tail(x + (width - width / 15), y + height / 3, x + width + (width / 4), y + height / 5, x + (width - (width / 15)), y + (height - height / 3));
+		wing = new Wing(x + (width / 3), y + 1, x + width, y, x + (width / 2), y + (height / 2));
+		tail = new Tail(x + (width - width / 15), 	y + height / 3,
+						x + width + (width / 4), 	y + height / 5,
+						x + (width - (width / 15)), y + (height - height / 3));
 	}
 	
 	public void draw() {

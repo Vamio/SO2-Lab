@@ -14,7 +14,6 @@ public class Tail {
 		this.y2 = y2;
 	}
 	
-	
 	public void draw() {
 		int[] xArr = {x, x1, x2};
 		int[] yArr = {y, y1, y2};
@@ -22,6 +21,6 @@ public class Tail {
 		Canvas.PEN.drawPolygon(xArr, yArr, 3);
 		Canvas.PEN.setColor(Color.white);
 		Canvas.PEN.fillPolygon(xArr, yArr, 3);
-		Canvas.PEN.setColor(Color.black);
+		Canvas.PEN.setColor(Color.black); // resetting the color to the default
 	}
 }
