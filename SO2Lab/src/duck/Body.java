@@ -31,7 +31,7 @@ public class Body {
 		Canvas.PEN.drawOval(x, y, width, height);
 		Canvas.PEN.setColor(Color.white);
 		Canvas.PEN.fillOval(x, y, width, height);
-		//other parts
+		// other body parts
 		legLeft.draw();
 		legRight.draw();
 		wing.draw();
