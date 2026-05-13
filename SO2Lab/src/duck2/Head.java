@@ -7,6 +7,7 @@ public class Head {
 	private Beak beak;
 	private Neck neck;
 	private Eye eye;
+	private CoolGlasses glasses;
 	
 	public Head(int x, int y, int width, int height) {
 		this.x = x;
@@ -18,6 +19,7 @@ public class Head {
 		beak = new Beak(x + (width / 20), y + (height / 3), x - (width / 3), y + (height / 3), x, y + (width / 2));
 		neck = new Neck(x + headWidth, y + (height - height / 3), width - (width / 3), height);
 		eye = new Eye(x + (width / 4), y + (height / 4), width / 4, height / 4);
+		glasses = new CoolGlasses(x + (width / 4), y + (height / 5), height / 3, headWidth);
 	}
 	
 	public void draw() {
@@ -32,5 +34,7 @@ public class Head {
 		beak.draw();
 		// drawing an eye
 		eye.draw();
+		// wearing glasses
+		glasses.draw();
 	}
 }
