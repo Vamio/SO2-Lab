@@ -20,8 +20,12 @@ public class Application {
 	}
 	
 	public void draw() {
-		for(Duck duck : ducks)
+		for(Duck duck : ducks) {
+			System.out.println(duck.intersects(duck));
 			duck.draw();
-		
+			if(duck.intersects(duck)) {
+				duck.draw();	
+			}
+		}
 	}
 }
