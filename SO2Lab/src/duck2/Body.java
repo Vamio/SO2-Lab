@@ -4,10 +4,10 @@ import java.awt.Color;
 
 public class Body {
 	private int x, y, width, height;
-	private Leg legLeft;
-	private Leg legRight;
-	private Wing wing;
-	private Tail tail;
+	private Leg legLeft; // composition
+	private Leg legRight; // composition
+	private Wing wing; // composition
+	private Tail tail; // composition
 	
 	public Body(int x, int y, int width, int height) {
 		this.x = x;

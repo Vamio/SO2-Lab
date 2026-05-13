@@ -4,10 +4,10 @@ import java.awt.Color;
 
 public class Head {
 	private int x, y, width, height;
-	private Beak beak;
-	private Neck neck;
-	private Eye eye;
-	private CoolGlasses glasses;
+	private Beak beak; // composition
+	private Neck neck; // composition
+	private Eye eye; // composition
+	private CoolGlasses glasses; // aggregation
 	
 	public Head(int x, int y, int width, int height) {
 		this.x = x;

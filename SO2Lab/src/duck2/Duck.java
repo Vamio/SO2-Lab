@@ -1,8 +1,8 @@
 package duck2;
 
 public class Duck {
-	private Body body;
-	private Head head;
+	private Body body; // composition
+	private Head head; // composition
 	
 	public Duck(int x, int y, int width, int height) {
 		body = new Body(x, y, width, height);
