@@ -1,9 +1,9 @@
 package duck2;
 
-public class CoolGlasses {
-	private int x, y, height, width;
+public class Glasses {
+	protected int x, y, height, width;
 	
-	public CoolGlasses(int x, int y, int height, int width) {
+	public Glasses(int x, int y, int height, int width) {
 		this.x = x;
 		this.y = y;
 		this.height = height;
