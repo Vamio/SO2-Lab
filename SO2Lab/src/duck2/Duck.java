@@ -6,11 +6,9 @@ public class Duck implements LocatedRectangle {
 	private Body body; // composition
 	private Head head; // composition
 	private Point location;
-	private int x, y, width, height;
+	private int width, height;
 	
 	public Duck(int x, int y, int width, int height) {
-		this.x = x;
-		this.y = y;
 		this.width = width;
 		this.height = height;
 		this.location = new Point(x, y);
@@ -24,15 +22,9 @@ public class Duck implements LocatedRectangle {
 		body.draw();
 	}
 
-	public Point address() {
-		return location;
-	}
+	public Point address() { return location; }
 
-	public int width() {
-		return width;
-	}
+	public int width() { return width; }
 
-	public int height() {
-		return height;
-	}
+	public int height() { return height; }
 }

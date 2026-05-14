@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Application {
 	private ArrayList<Duck> ducks;
-	private boolean canDraw = true;
 	
 	public Application() {
 		int width = 150;
@@ -16,26 +15,23 @@ public class Application {
 		
 		ducks.add(new Duck(x, y, width, height));
 		ducks.add(new Duck(x + width * 2, y, width, height));
-		
-		//(600, 300, 1500, 600) x, y, width, height, test large duck
+		ducks.add(new Duck(x + width * 4, y, width, height));
+		ducks.add(new Duck(x + width * 6, y, width, height));
 	}
 	
 	public void draw() {
-		for (int i = 0; i < ducks.size(); i++) {
-			for (int j = i + 1; j < ducks.size(); j++) {
-				Duck alexey = ducks.get(i);
-				Duck anton = ducks.get(j);
-				
-				System.out.println("Duck " + i + " intersects with duck " + j + ": " + alexey.intersects(anton));
-				
-				if (alexey.intersects(anton)) 
-					canDraw = false;
-			}
-		}
+		ducks.get(0).draw(); // drawing the first duck
 		
-		if (canDraw) {
-			for (Duck duck : ducks) {
-				duck.draw();
+		for (int i = 1; i < ducks.size(); i++) {
+			Duck previousDuck = ducks.get(i - 1);
+			Duck currentDuck = ducks.get(i);
+			
+			if(!currentDuck.intersects(previousDuck)) {
+				currentDuck.draw();
+				
+				System.out.println("Duck " + i + " is drawn");
+			} else {
+				System.out.println("Duck " + i + " is NOT drawn");
 			}
 		}
 	}
