@@ -1,5 +1,10 @@
 package duck2;
 
+/* A class where head of a duck is assembled
+ * 
+ * Authors: Soinikov, Nikita
+ */
+
 import java.awt.Color;
 
 public class Head {

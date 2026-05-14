@@ -1,5 +1,10 @@
 package duck2;
 
+/* A class which assembles the body of a duck
+ * 
+ * Authors: Soinikov, Nikita
+ */
+
 import java.awt.Color;
 
 public class Body {

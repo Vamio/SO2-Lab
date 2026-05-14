@@ -1,5 +1,10 @@
 package duck2;
 
+/* A class where ducks are being drawn
+ * 
+ * Authors: Soinikov, Nikita
+ */
+
 import java.util.ArrayList;
 
 public class Application {
@@ -25,10 +30,9 @@ public class Application {
 		for (int i = 1; i < ducks.size(); i++) {
 			Duck previousDuck = ducks.get(i - 1);
 			Duck currentDuck = ducks.get(i);
-			
+			// drawing a duck if it doesn't collide with the previous one
 			if(!currentDuck.intersects(previousDuck)) {
 				currentDuck.draw();
-				
 				System.out.println("Duck " + i + " is drawn");
 			} else {
 				System.out.println("Duck " + i + " is NOT drawn");

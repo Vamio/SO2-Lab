@@ -1,5 +1,10 @@
 package duck2;
 
+/* A class responsible for a duck's tail
+ * 
+ * Authors: Soinikov, Nikita
+ */
+
 import java.awt.Color;
 
 public class Tail {

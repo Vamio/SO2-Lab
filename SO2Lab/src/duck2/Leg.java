@@ -1,5 +1,10 @@
 package duck2;
 
+/* A class responsible for a duck's leg
+ * 
+ * Authors: Soinikov, Nikita
+ */
+
 import java.awt.Color;
 
 public class Leg {

@@ -1,4 +1,10 @@
 package duck2;
+
+/* A class responsible for a duck's beak
+ * 
+ * Authors: Soinikov, Nikita
+ */
+
 import java.awt.Color;
 
 public class Beak {

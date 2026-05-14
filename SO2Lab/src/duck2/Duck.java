@@ -1,5 +1,10 @@
 package duck2;
 
+/* A class where a duck is assembled
+ * 
+ * Authors: Soinikov, Nikita
+ */
+
 import java.awt.Point;
 
 public class Duck implements LocatedRectangle {

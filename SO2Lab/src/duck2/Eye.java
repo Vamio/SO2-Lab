@@ -1,5 +1,10 @@
 package duck2;
 
+/* A class responsible for a duck's eye
+ * 
+ * Authors: Soinikov, Nikita
+ */
+
 public class Eye {
 	private int x, y, height, width;
 	

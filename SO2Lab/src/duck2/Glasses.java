@@ -1,5 +1,10 @@
 package duck2;
 
+/* A superclass for glasses
+ * 
+ * Authors: Soinikov, Nikita
+ */
+
 public class Glasses {
 	protected int x, y, height, width;
 	
