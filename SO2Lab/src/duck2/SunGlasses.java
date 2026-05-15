@@ -13,6 +13,6 @@ public class SunGlasses extends Glasses{
 	public void draw() {
 		super.draw();
 		// shading the glasses
-		Canvas.PEN.fillRect(x, y, width, height);
+		Canvas.PEN.fillRect(getX(), getY(), getWidth(), getHeight());
 	}
 }

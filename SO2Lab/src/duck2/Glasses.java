@@ -6,7 +6,7 @@ package duck2;
  */
 
 public class Glasses {
-	protected int x, y, height, width;
+	private int x, y, height, width; 
 	
 	public Glasses(int x, int y, int height, int width) {
 		this.x = x;
@@ -14,6 +14,11 @@ public class Glasses {
 		this.height = height;
 		this.width = width;
 	}
+	
+    public int getX() { return x; }
+    public int getY() { return y; }
+    public int getHeight() { return height; }
+    public int getWidth() { return width; }
 	
 	public void draw() {
 		Canvas.PEN.drawRect(x, y, width, height);

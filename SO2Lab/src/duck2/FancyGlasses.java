@@ -16,6 +16,8 @@ public class FancyGlasses extends Glasses{
 		// making glasses pink, then resetting the colour
 		Canvas.PEN.setColor(Color.pink);
 		super.draw();
+		Canvas.PEN.fillOval(getX(), getY() - (getHeight() / 4), getWidth() / 4, getHeight() / 4);
+		Canvas.PEN.fillOval(getX() + (getWidth() / 3), getY() - (getHeight() / 4), getWidth() / 4, getHeight() / 4);
 		Canvas.PEN.setColor(Color.black);
 	}
 }
