@@ -10,6 +10,7 @@ public class SunGlasses extends Glasses{
 		super(x, y, height, width);
 	}
 	
+	@Override
 	public void draw() {
 		super.draw();
 		// shading the glasses
