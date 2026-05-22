@@ -26,7 +26,7 @@ public class Duck implements LocatedRectangle {
 		head.draw();
 		body.draw();
 	}
-
+	
 	public Point address() { return position; }
 
 	public int width() { return width; }
