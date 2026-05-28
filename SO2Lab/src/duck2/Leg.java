@@ -18,12 +18,14 @@ public class Leg {
 	}
 
 	public void draw() {
-		int footWidth = x - (width/5); 
-		int footHeight = y + height;
+		int footX = x - (width/5); 
+		int footY = y + height;
+		int footWidth = width / 5;
+		int footHeight = height / 5;
 		
 		Canvas.PEN.setColor(Color.orange);
 		Canvas.PEN.drawLine(x, y, x, y + height);
-		Canvas.PEN.fillRect(footWidth, footHeight, width / 5, height / 5); // Drawing feet
+		Canvas.PEN.fillRect(footX, footY, footWidth, footHeight); // Drawing feet
 		Canvas.PEN.setColor(Color.black);	// Resetting the color to the default
 	}
 }

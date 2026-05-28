@@ -38,18 +38,24 @@ public class Duck implements LocatedRectangle {
 		int headWidth = width / 3;
 		int headHeight = height - (height / 4);
 		
-		this.position = new Point(x - (width / 9), y - (height / 3 * 2));
+		this.position = new Point(headX, headY);
 		body = new Body(x, y, width, height);
 		head = new Head(headX, headY, headWidth, headHeight);
 		
 	}
 	
 	@Override
-	public Point address() { return position; }
+	public Point address() { 
+		return position; 
+	}
 	
 	@Override
-	public int width() { return width + (width / 9); } // Body + head
+	public int width() { 
+		return width + (width / 9); // Body + head
+	}
 
 	@Override
-	public int height() { return height + (height / 3 * 2); } // Body + head
+	public int height() { 
+		return height + (height / 3 * 2); // Body + head
+	}
 }

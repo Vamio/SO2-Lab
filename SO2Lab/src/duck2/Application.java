@@ -17,7 +17,7 @@ public class Application {
 	
 	public Application() {
 		ducks = new ArrayList<Duck>();
-		// !!! CHECK HEIGHT INTERSECTIONS
+		// Duck 0 is created
 		ducks.add(new Duck(x, y, width, height));
 		//ducks.add(new Duck(x, y - height, width, height)); // duck 1 is located so it intersects with duck 0 from above
 		/*ducks.add(new Duck(x + width * 2, y, width, height));

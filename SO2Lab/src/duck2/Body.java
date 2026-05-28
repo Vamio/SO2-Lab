@@ -19,14 +19,31 @@ public class Body {
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		
+		// Legs
 		int leftFoot = width / 3;
-		legLeft = new Leg(x + leftFoot, y + height, width, height);
-		legRight = new Leg(x + leftFoot * 2, y + height, width, height);
-		wing = new Wing(x + (width / 3), y + 1, x + width, y, x + (width / 2), y + (height / 2));
-		tail = new Tail(x + (width - width / 15), 	y + height / 3,
-						x + width + (width / 4), 	y + height / 5,
-						x + (width - (width / 15)), y + (height - height / 3));
+		int legY = y + height;
+		int legLeftX  = x + leftFoot;
+		int legRightX = x + leftFoot * 2;
+		int legWidth  = width;
+		int legHeight = height;
+		legLeft  = new Leg(legLeftX,  legY, legWidth, legHeight);
+		legRight = new Leg(legRightX, legY, legWidth, legHeight);
+		// Wing
+		int wingX  = x + (width / 3);
+		int wingY  = y + 1;
+		int wingX1 = x + width;
+		int wingY1 = y;
+		int wingX2 = x + (width / 2);
+		int wingY2 = y + (height / 2);
+		wing = new Wing(wingX, wingY, wingX1, wingY1, wingX2, wingY2);
+		// Tail
+		int tailX  = x + (width - width / 15);
+		int tailY  = y + height / 3;
+		int tailX1 = x + width + (width / 4);
+		int tailY1 = y + height / 5;
+		int tailX2 = x + (width - (width / 15));
+		int tailY2 = y + (height - height / 3);
+		tail = new Tail(tailX, tailY, tailX1, tailY1, tailX2, tailY2);
 	}
 	
 	public void draw() {

@@ -21,10 +21,32 @@ public class Head {
 		this.height = height;
 		
 		int headWidth = width / 3;
-		beak = new Beak(x + (width / 20), y + (height / 3), x - (width / 3), y + (height / 3), x, y + (width / 2));
-		neck = new Neck(x + headWidth, y + (height - height / 3), width - (width / 3), height);
-		eye = new Eye(x + (width / 4), y + (height / 4), width / 4, height / 4);
-		aPairOfGlasses = randomGlasses(x + (width / 4), y + (height / 5), height / 3, headWidth);
+		// Beak
+		int beakX = x + (width / 20);
+		int beakY = y + (height / 3);
+		int beakX1 = x - (width / 3);
+		int beakY1 = y + (height / 3);
+		int beakX2 = x;
+		int beakY2 = y + (width / 2);
+		beak = new Beak(beakX, beakY, beakX1, beakY1, beakX2, beakY2);
+		// Neck
+		int neckX      = x + headWidth;
+		int neckY      = y + (height - height / 3);
+		int neckWidth  = width - (width / 3);
+		int neckHeight = height;
+		neck = new Neck(neckX, neckY, neckWidth, neckHeight);
+		// Eye
+		int eyeX      = x + (width / 4);
+		int eyeY      = y + (height / 4);
+		int eyeWidth  = width / 4;
+		int eyeHeight = height / 4;
+		eye = new Eye(eyeX, eyeY, eyeWidth, eyeHeight);
+		// Glasses
+		int glassesX      = x + (width / 4);
+		int glassesY      = y + (height / 5);
+		int glassesWidth  = height / 3;
+		int glassesHeight = headWidth;
+		aPairOfGlasses = randomGlasses(glassesX, glassesY, glassesWidth, glassesHeight);
 	}
 	
 	private Glasses randomGlasses(int x, int y, int height, int width) {
