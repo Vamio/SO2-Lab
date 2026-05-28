@@ -19,8 +19,6 @@ public class Head {
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		
-		int headWidth = width / 3;
 		// Beak
 		int beakX = x + (width / 20);
 		int beakY = y + (height / 3);
@@ -30,7 +28,7 @@ public class Head {
 		int beakY2 = y + (width / 2);
 		beak = new Beak(beakX, beakY, beakX1, beakY1, beakX2, beakY2);
 		// Neck
-		int neckX      = x + headWidth;
+		int neckX      = x + width / 3;
 		int neckY      = y + (height - height / 3);
 		int neckWidth  = width - (width / 3);
 		int neckHeight = height;
@@ -41,14 +39,11 @@ public class Head {
 		int eyeWidth  = width / 4;
 		int eyeHeight = height / 4;
 		eye = new Eye(eyeX, eyeY, eyeWidth, eyeHeight);
-		//aPairOfGlasses = giveRandomGlasses(glassesX, glassesY, glassesWidth, glassesHeight);
 	}
 	
 	public void setGlasses(Glasses glasses) {
 	    this.aPairOfGlasses = glasses;
 	}
-	
-
 	
 	public void draw() {
 		// drawing neck under the head and the body

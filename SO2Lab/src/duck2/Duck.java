@@ -25,7 +25,6 @@ public class Duck implements LocatedRectangle {
 		
 		body = new Body(x, y, width, height);
 		head = new Head(headX, headY, headWidth, headHeight);
-		
 		// Glasses
 		int glassesX      = headX + (headWidth / 4);
 		int glassesY      = headY + (headHeight / 5);
