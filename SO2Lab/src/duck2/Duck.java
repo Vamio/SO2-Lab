@@ -25,6 +25,26 @@ public class Duck implements LocatedRectangle {
 		
 		body = new Body(x, y, width, height);
 		head = new Head(headX, headY, headWidth, headHeight);
+		
+		// Glasses
+		int glassesX      = headX + (headWidth / 4);
+		int glassesY      = headY + (headHeight / 5);
+		int glassesWidth  = headHeight / 3;
+		int glassesHeight = headWidth / 3;
+		head.setGlasses(giveRandomGlasses(glassesX, glassesY, glassesHeight, glassesWidth));
+	}
+	
+	private Glasses giveRandomGlasses(int x, int y, int height, int width) {
+		switch(RandomNumber.between(0, 2)) {
+		case 0:
+			return new ReadingGlasses(x, y, width, height);
+		case 1:
+			return new SunGlasses(x, y, width, height);
+		case 2:
+			return new FancyGlasses(x, y, width, height);
+		default:
+			return new Glasses(x, y, width, height);
+		}
 	}
 	
 	public void draw() {
@@ -42,6 +62,11 @@ public class Duck implements LocatedRectangle {
 		body = new Body(x, y, width, height);
 		head = new Head(headX, headY, headWidth, headHeight);
 		
+		int glassesX      = headX + (headWidth / 4);
+		int glassesY      = headY + (headHeight / 5);
+		int glassesWidth  = headHeight / 3;
+		int glassesHeight = headWidth / 3;
+		head.setGlasses(giveRandomGlasses(glassesX, glassesY, glassesHeight, glassesWidth));
 	}
 	
 	@Override

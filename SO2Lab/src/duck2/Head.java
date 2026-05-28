@@ -41,26 +41,14 @@ public class Head {
 		int eyeWidth  = width / 4;
 		int eyeHeight = height / 4;
 		eye = new Eye(eyeX, eyeY, eyeWidth, eyeHeight);
-		// Glasses
-		int glassesX      = x + (width / 4);
-		int glassesY      = y + (height / 5);
-		int glassesWidth  = height / 3;
-		int glassesHeight = headWidth;
-		aPairOfGlasses = giveRandomGlasses(glassesX, glassesY, glassesWidth, glassesHeight);
+		//aPairOfGlasses = giveRandomGlasses(glassesX, glassesY, glassesWidth, glassesHeight);
 	}
 	
-	private Glasses giveRandomGlasses(int x, int y, int height, int width) {
-		switch(RandomNumber.between(0, 2)) {
-		case 0:
-			return new ReadingGlasses(x, y, width, height);
-		case 1:
-			return new SunGlasses(x, y, width, height);
-		case 2:
-			return new FancyGlasses(x, y, width, height);
-		default:
-			return new Glasses(x, y, width, height);
-		}
+	public void setGlasses(Glasses glasses) {
+	    this.aPairOfGlasses = glasses;
 	}
+	
+
 	
 	public void draw() {
 		// drawing neck under the head and the body
