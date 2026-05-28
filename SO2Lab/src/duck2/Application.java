@@ -13,13 +13,13 @@ public class Application {
 	public Application() {
 		int width = 150;
 		int height = 60;
-		int x = 200;
+		int x = 80;
 		int y = 300;
 		
 		ducks = new ArrayList<Duck>();
 		// !!! CHECK HEIGHT INTERSECTIONS
 		ducks.add(new Duck(x, y, width, height));
-		ducks.add(new Duck(x + width * 2, y, width, height));
+		ducks.add(new Duck(x, y - height, width, height));
 		ducks.add(new Duck(x + width * 4, y, width, height));
 		ducks.add(new Duck(x + width * 6, y, width, height));
 	}
@@ -31,7 +31,7 @@ public class Application {
 			Duck previousDuck = ducks.get(i - 1);
 			Duck currentDuck = ducks.get(i);
 			// drawing a duck if it doesn't collide with the previous one
-			if(currentDuck.intersects(previousDuck)) {
+			if(!currentDuck.intersects(previousDuck)) {
 				currentDuck.draw();
 				System.out.println("Duck " + i + " is drawn");
 			} else {
