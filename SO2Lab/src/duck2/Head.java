@@ -46,10 +46,10 @@ public class Head {
 		int glassesY      = y + (height / 5);
 		int glassesWidth  = height / 3;
 		int glassesHeight = headWidth;
-		aPairOfGlasses = randomGlasses(glassesX, glassesY, glassesWidth, glassesHeight);
+		aPairOfGlasses = giveRandomGlasses(glassesX, glassesY, glassesWidth, glassesHeight);
 	}
 	
-	private Glasses randomGlasses(int x, int y, int height, int width) {
+	private Glasses giveRandomGlasses(int x, int y, int height, int width) {
 		switch(RandomNumber.between(0, 2)) {
 		case 0:
 			return new ReadingGlasses(x, y, width, height);
