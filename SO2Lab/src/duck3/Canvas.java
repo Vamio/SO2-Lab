@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -25,7 +26,7 @@ public class Canvas extends JFrame implements ActionListener{
 	
 	private JButton btnSizePlus; 
 	private JButton btnSizeMinus;
-	private JButton btnNewHats;
+	private JButton btnNewGlasses;
 	
 	private class CanvasPanel extends JPanel {
 		@Override
@@ -42,13 +43,13 @@ public class Canvas extends JFrame implements ActionListener{
 		myApp = new Application();
 		add(canvasPanel = new CanvasPanel(), BorderLayout.CENTER);
 		
-		btnSizePlus = new JButton(); 
-		btnSizePlus.addActionListener(this); 
-		add(btnSizePlus, BorderLayout.WEST); 
+		JPanel btnPanel = new JPanel();
+		add(btnPanel, BorderLayout.WEST);
+		btnPanel.setLayout(new GridLayout(5, 2, 0, 0));
 		
-		btnSizeMinus = new JButton(); 
-		btnSizeMinus.addActionListener(this); 
-		add(btnSizeMinus, BorderLayout.EAST); 
+		btnSizePlus = createButton("MAKE EM BIGGER", btnPanel);
+		btnSizeMinus = createButton("MAKE EM SMALLER", btnPanel);
+		btnNewGlasses = createButton("Change Glasses", btnPanel);
 		
 		Dimension screenSize = getToolkit().getScreenSize();
 		setBounds(0, 0, screenSize.width, screenSize.height);
@@ -67,10 +68,18 @@ public class Canvas extends JFrame implements ActionListener{
 				myApp.makeSmaller();
 				canvasPanel.repaint();
 			}
-			else if(e.getSource() == btnNewHats) {
-				myApp.changeHats(RandomNumber.between(0, 2));
+			else if(e.getSource() == btnNewGlasses) {
+				myApp.changeGlasses();
 				canvasPanel.repaint();
 			}
+		}
+		
+		private JButton createButton(String title, JPanel jp) {
+			JButton btn = new JButton(title);
+			btn.addActionListener(this);
+			jp.add(btn);
+			return btn;
+			
 		}
 		
 		public static void main(String[] args) {

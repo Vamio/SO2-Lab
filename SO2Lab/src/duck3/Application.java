@@ -16,14 +16,15 @@ public class Application {
     private int x = 80;
     private int y = 300;
     private static final int NUMBER_OF_DUCKS = 5;
+    private int glassesType = 0;
 
     public Application() {
         ducks = new ArrayList<Duck>();
-        buildDucks();
         hats = new ArrayList<Hat>();
-        hats.add(new ChefHat(ducks.get(0).getX(), ducks.get(0).getY() - ducks.get(0).height() / 2, 80, 80));
-        hats.add(new CapHat(ducks.get(0).getX(), ducks.get(0).getY() - ducks.get(0).height() / 3, 80, 60));
-        hats.add(new BowtieHat(ducks.get(0).getX(), ducks.get(0).getY() - ducks.get(0).height() / 6, 80, 50));
+        buildDucks();
+        //hats.add(new ChefHat(ducks.get(0).getX(), ducks.get(0).getY() - ducks.get(0).height() / 2, 80, 80));
+        //hats.add(new CapHat(ducks.get(0).getX(), ducks.get(0).getY() - ducks.get(0).height() / 3, 80, 60));
+        //hats.add(new BowtieHat(ducks.get(0).getX(), ducks.get(0).getY() - ducks.get(0).height() / 6, 80, 50));
     }
 
     private void buildDucks() {
@@ -31,18 +32,28 @@ public class Application {
         ducks.add(new Duck(x, y, width, height));
         for (int newDuck = 1; newDuck <= NUMBER_OF_DUCKS; newDuck++) {
             int newX = x + width * newDuck * 2;
-            Duck next = new Duck(newX, y, width, height);
+            int newY = y;
+
+            Duck next = new Duck(newX, newY, width, height);
             Duck previous = ducks.get(ducks.size() - 1);
-            
+
             if (!next.intersects(previous)) {
                 ducks.add(next);
             }
+        }
+        int duckX = ducks.get(0).getX();
+        
+        for (Duck duck : ducks) {
+            duck.setGlassesType(glassesType);
+            hats.add(new ChefHat(duckX++,ducks.get(0).getY() - ducks.get(0).height() / 2, 80, 80));
+            System.out.println("Hat added");
         }
     }
 
     public void draw() {
         for (int i = 0; i < ducks.size(); i++) {
             ducks.get(i).draw();
+            hats.get(i).draw();
         }
     }
 
@@ -60,10 +71,11 @@ public class Application {
     	}
     }
     
-    public void changeHats(int value) {
-    	int currentHat = value;
-    	
-    	hats.get(currentHat).draw();
-    	
+    public void changeGlasses() {
+        glassesType = (glassesType + 1) % 3;
+        
+        for (Duck duck : ducks) {
+            duck.setGlassesType(glassesType);
+        }
     }
 }
