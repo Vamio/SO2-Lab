@@ -109,13 +109,11 @@ public class Duck implements LocatedRectangle {
 
     @Override
     public int width() {
-        // left: beak tip at x - 2*(width/9), right: tail tip at x + width + width/4
         return 2 * (width / 9) + width + (width / 4);
     }
 
     @Override
     public int height() {
-        // top: head at y - (height/3)*2, bottom: foot at y + 2*height + height/5
         return ((height / 3) * 2) + 2 * height + (height / 5);
     }
 }

@@ -28,15 +28,15 @@ public class Head {
 		int beakY2 = y + (width / 2);
 		beak = new Beak(beakX, beakY, beakX1, beakY1, beakX2, beakY2);
 		// Neck
-		int neckX      = x + width / 3;
-		int neckY      = y + (height - height / 3);
-		int neckWidth  = width - (width / 3);
+		int neckX = x + width / 3;
+		int neckY = y + (height - height / 3);
+		int neckWidth = width - (width / 3);
 		int neckHeight = height;
 		neck = new Neck(neckX, neckY, neckWidth, neckHeight);
 		// Eye
-		int eyeX      = x + (width / 4);
-		int eyeY      = y + (height / 4);
-		int eyeWidth  = width / 4;
+		int eyeX = x + (width / 4);
+		int eyeY = y + (height / 4);
+		int eyeWidth = width / 4;
 		int eyeHeight = height / 4;
 		eye = new Eye(eyeX, eyeY, eyeWidth, eyeHeight);
 	}

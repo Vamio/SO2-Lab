@@ -48,8 +48,8 @@ public class Canvas extends JFrame implements ActionListener{
 		add(btnPanel, BorderLayout.WEST);
 		btnPanel.setLayout(new GridLayout(2, 2, 4, 100));
 		
-		btnSizePlus = createButton("MAKE EM BIGGER", btnPanel);
-		btnSizeMinus = createButton("MAKE EM SMALLER", btnPanel);
+		btnSizePlus = createButton("Come Closer to the Ducks", btnPanel);
+		btnSizeMinus = createButton("Step Back from the Ducks", btnPanel);
 		btnNewGlasses = createButton("Change Glasses", btnPanel);
 		btnNewHat = createButton("Change Hat", btnPanel);
 		
