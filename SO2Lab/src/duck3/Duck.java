@@ -68,7 +68,7 @@ public class Duck implements LocatedRectangle {
     }
 
     public void draw() {
-        Canvas.PEN.drawRect(getX(), getY(), width(), height());
+        //Canvas.PEN.drawRect(getX(), getY(), width(), height());
         head.draw();
         body.draw();
     }

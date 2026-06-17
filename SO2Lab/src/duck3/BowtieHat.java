@@ -16,17 +16,21 @@ public class BowtieHat extends Hat {
     @Override
     public void draw() {
         int midX = getX() + getWidth() / 2;
-        int midY = getY() + getHeight() / 2;
+        int midY = getY() + getHeight();
 
-        Canvas.PEN.setColor(Color.pink);
+        Canvas.PEN.setColor(Color.PINK);
         // left part
         int[] lx = { getX(), getX(), midX };
-        int[] ly = { getY(), getY() + getHeight(), midY };
+        int[] ly = { getY() + getHeight() / 3, getY() + getHeight() + getHeight() / 3, midY };
         Canvas.PEN.fillPolygon(lx, ly, 3);
         // right part
         int[] rx = { getX() + getWidth(), getX() + getWidth(), midX };
-        int[] ry = { getY(), getY() + getHeight(), midY };
+        int[] ry = { getY() + getHeight() / 3, getY() + getHeight() + getHeight() / 3, midY };
         Canvas.PEN.fillPolygon(rx, ry, 3);
-        Canvas.PEN.setColor(Color.black);
+        // ball
+        Canvas.PEN.drawOval(getX() + getWidth() / 2 - getWidth() / 6, getY() + getHeight() - getHeight() / 6, getWidth() / 4, getHeight() / 4);
+        Canvas.PEN.setColor(Color.WHITE);
+        Canvas.PEN.fillOval(getX() + getWidth() / 2 - getWidth() / 6, getY() + getHeight() - getHeight() / 6, getWidth() / 4, getHeight() / 4);
+        Canvas.PEN.setColor(Color.BLACK);
     }
 }

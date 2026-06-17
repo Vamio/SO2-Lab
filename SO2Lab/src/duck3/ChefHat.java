@@ -23,15 +23,15 @@ public class ChefHat extends Hat {
         int topH = getHeight() - brimmH;
 
         // tall white top
-        Canvas.PEN.setColor(Color.white);
+        Canvas.PEN.setColor(Color.WHITE);
         Canvas.PEN.fillRect(topX, getY(), topW, topH);
-        Canvas.PEN.setColor(Color.black);
+        Canvas.PEN.setColor(Color.BLACK);
         Canvas.PEN.drawRect(topX, getY(), topW, topH);
 
         // brim at bottom
-        Canvas.PEN.setColor(Color.white);
+        Canvas.PEN.setColor(Color.WHITE);
         Canvas.PEN.fillRect(brimmX, getY() + topH, brimmW, brimmH);
-        Canvas.PEN.setColor(Color.black);
+        Canvas.PEN.setColor(Color.BLACK);
         Canvas.PEN.drawRect(brimmX, getY() + topH, brimmW, brimmH);
     }
 }

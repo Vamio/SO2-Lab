@@ -27,6 +27,7 @@ public class Canvas extends JFrame implements ActionListener{
 	private JButton btnSizePlus; 
 	private JButton btnSizeMinus;
 	private JButton btnNewGlasses;
+	private JButton btnNewHat;
 	
 	private class CanvasPanel extends JPanel {
 		@Override
@@ -45,13 +46,15 @@ public class Canvas extends JFrame implements ActionListener{
 		
 		JPanel btnPanel = new JPanel();
 		add(btnPanel, BorderLayout.WEST);
-		btnPanel.setLayout(new GridLayout(5, 2, 0, 0));
+		btnPanel.setLayout(new GridLayout(2, 2, 4, 100));
 		
 		btnSizePlus = createButton("MAKE EM BIGGER", btnPanel);
 		btnSizeMinus = createButton("MAKE EM SMALLER", btnPanel);
 		btnNewGlasses = createButton("Change Glasses", btnPanel);
+		btnNewHat = createButton("Change Hat", btnPanel);
 		
 		Dimension screenSize = getToolkit().getScreenSize();
+		
 		setBounds(0, 0, screenSize.width, screenSize.height);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,6 +73,10 @@ public class Canvas extends JFrame implements ActionListener{
 			}
 			else if(e.getSource() == btnNewGlasses) {
 				myApp.changeGlasses();
+				canvasPanel.repaint();
+			}
+			else if(e.getSource() == btnNewHat) {
+				myApp.changeHats();
 				canvasPanel.repaint();
 			}
 		}

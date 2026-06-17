@@ -15,14 +15,14 @@ public class CapHat extends Hat {
 
     @Override
     public void draw() {
-        int brimmH = getHeight() / 5;
-        int brimmW = getWidth() / 3;
+        int brimH = getHeight() / 5;
+        int brimW = getWidth() / 3;
 
-        Canvas.PEN.setColor(Color.blue);
+        Canvas.PEN.setColor(Color.BLUE);
         // top of a cap
-        Canvas.PEN.fillArc(getX(), getY(), getWidth(), getHeight() * 2, 0, 180);
+        Canvas.PEN.fillArc(getX(), getY() + brimH, getWidth(), getHeight() * 2, 0, 180);
         // brim 
-        Canvas.PEN.fillRect(getX() - brimmW, getY() + getHeight() - brimmH, brimmW, brimmH);
-        Canvas.PEN.setColor(Color.black);
+        Canvas.PEN.fillRect(getX() - brimW, getY() + getHeight(), brimW, brimH);
+        Canvas.PEN.setColor(Color.BLACK);
     }
 }

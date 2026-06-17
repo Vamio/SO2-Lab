@@ -17,14 +17,13 @@ public class Application {
     private int y = 300;
     private static final int NUMBER_OF_DUCKS = 5;
     private int glassesType = 0;
+    private int hatType = 0;
 
     public Application() {
         ducks = new ArrayList<Duck>();
         hats = new ArrayList<Hat>();
+
         buildDucks();
-        //hats.add(new ChefHat(ducks.get(0).getX(), ducks.get(0).getY() - ducks.get(0).height() / 2, 80, 80));
-        //hats.add(new CapHat(ducks.get(0).getX(), ducks.get(0).getY() - ducks.get(0).height() / 3, 80, 60));
-        //hats.add(new BowtieHat(ducks.get(0).getX(), ducks.get(0).getY() - ducks.get(0).height() / 6, 80, 50));
     }
 
     private void buildDucks() {
@@ -41,12 +40,36 @@ public class Application {
                 ducks.add(next);
             }
         }
-        int duckX = ducks.get(0).getX();
-        
+
         for (Duck duck : ducks) {
             duck.setGlassesType(glassesType);
-            hats.add(new ChefHat(duckX++,ducks.get(0).getY() - ducks.get(0).height() / 2, 80, 80));
-            System.out.println("Hat added");
+        }
+        
+        buildHats();
+    }
+
+    private Hat makeHat(int type, int x, int y, int width, int height) {
+        switch (type) {
+            case 0:
+                return new ChefHat(x, y, width, height);
+            case 1:
+                return new CapHat(x, y, width, height);
+            case 2:
+                return new BowtieHat(x, y, width, height);
+            default:
+                return new ChefHat(x, y, width, height);
+        }
+    }
+
+    private void buildHats() {
+        hats.clear();
+        int hatWidth = width / 3;
+        int hatHeight = height - (height / 4);
+        
+        for (Duck duck : ducks) {
+            int hatX = duck.getX() + hatWidth / 3;
+            int hatY = duck.getY() - hatHeight;
+            hats.add(makeHat(hatType, hatX, hatY, hatWidth, hatHeight));
         }
     }
 
@@ -58,24 +81,29 @@ public class Application {
     }
 
     public void makeBigger() {
-    	width += 5;
-    	height += 2;
-    	buildDucks();
+        width += 5;
+        height += 2;
+        buildDucks();
     }
-    
+
     public void makeSmaller() {
-    	if(width != 0 || height != 0) {
-	        width -= 5;
-	        height -= 2;
-	        buildDucks();
-    	}
+        if (width != 0 || height != 0) {
+            width -= 5;
+            height -= 2;
+            buildDucks();
+        }
     }
-    
+
     public void changeGlasses() {
         glassesType = (glassesType + 1) % 3;
-        
+
         for (Duck duck : ducks) {
             duck.setGlassesType(glassesType);
         }
+    }
+
+    public void changeHats() {
+        hatType = (hatType + 1) % 3;
+        buildHats();
     }
 }
