@@ -68,22 +68,27 @@ public class Canvas extends JFrame implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == btnSizePlus) {
+				// Make Ducks larger button
 				myApp.makeBigger();
 				canvasPanel.repaint();
 			}
 			else if (e.getSource() == btnSizeMinus) {
+				// Make Ducks smaller button
 				myApp.makeSmaller();
 				canvasPanel.repaint();
 			}
 			else if(e.getSource() == btnNewGlasses) {
+				// Change Glasses button
 				myApp.changeGlasses();
 				canvasPanel.repaint();
 			}
 			else if(e.getSource() == btnNewHat) {
+				// Change Hats button
 				myApp.changeHats();
 				canvasPanel.repaint();
 			}
 			else if(e.getSource() == btnQuit) {
+				// Quit button
 				System.exit(0);
 			}
 		}
