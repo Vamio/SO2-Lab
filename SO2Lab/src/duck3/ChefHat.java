@@ -27,7 +27,6 @@ public class ChefHat extends Hat {
         Canvas.PEN.fillRect(topX, getY(), topW, topH);
         Canvas.PEN.setColor(Color.BLACK);
         Canvas.PEN.drawRect(topX, getY(), topW, topH);
-
         // brim 
         Canvas.PEN.setColor(Color.WHITE);
         Canvas.PEN.fillRect(brimmX, getY() + topH, brimmW, brimmH);

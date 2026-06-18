@@ -10,6 +10,7 @@ import javax.swing.JButton;
  */
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.GridLayout;
@@ -28,6 +29,7 @@ public class Canvas extends JFrame implements ActionListener{
 	private JButton btnSizeMinus;
 	private JButton btnNewGlasses;
 	private JButton btnNewHat;
+	private JButton btnQuit;
 	
 	private class CanvasPanel extends JPanel {
 		@Override
@@ -46,12 +48,14 @@ public class Canvas extends JFrame implements ActionListener{
 		
 		JPanel btnPanel = new JPanel();
 		add(btnPanel, BorderLayout.WEST);
-		btnPanel.setLayout(new GridLayout(2, 2, 4, 100));
-		
-		btnSizePlus = createButton("Come Closer to the Ducks", btnPanel);
+		btnPanel.setLayout(new GridLayout(0, 1, 80, 4));
+		btnPanel.add(new JLabel("Distance from the Ducks", JLabel.CENTER));
+		btnSizePlus  = createButton("Come Closer to the Ducks", btnPanel);
 		btnSizeMinus = createButton("Step Back from the Ducks", btnPanel);
+		btnPanel.add(new JLabel("Styling", JLabel.CENTER));
 		btnNewGlasses = createButton("Change Glasses", btnPanel);
-		btnNewHat = createButton("Change Hat", btnPanel);
+		btnNewHat = createButton("Change Hats", btnPanel);
+		btnQuit = createButton("Quit", btnPanel);
 		
 		Dimension screenSize = getToolkit().getScreenSize();
 		
@@ -79,6 +83,9 @@ public class Canvas extends JFrame implements ActionListener{
 				myApp.changeHats();
 				canvasPanel.repaint();
 			}
+			else if(e.getSource() == btnQuit) {
+				System.exit(0);
+			}
 		}
 		
 		private JButton createButton(String title, JPanel jp) {
@@ -90,6 +97,6 @@ public class Canvas extends JFrame implements ActionListener{
 		}
 		
 		public static void main(String[] args) {
-			new Canvas("Some art");
+			new Canvas("Cool Ducks");
 		}
 }
