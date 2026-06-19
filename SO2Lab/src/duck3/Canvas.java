@@ -56,9 +56,9 @@ public class Canvas extends JFrame implements ActionListener{
 		btnNewGlasses = createButton("Change Glasses", btnPanel);
 		btnNewHat = createButton("Change Hats", btnPanel);
 		btnBodyColor = createButton("Change Body Color", btnPanel);
-		btnPanel.add(new JLabel("", JLabel.CENTER));
+		btnPanel.add(new JLabel("", JLabel.CENTER)); // Empty JLabel for spacing
 		btnQuit = createButton("Quit", btnPanel);
-
+		
 		Dimension screenSize = getToolkit().getScreenSize();
 		
 		setBounds(0, 0, screenSize.width, screenSize.height);

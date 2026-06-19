@@ -1,1 +1,2 @@
-Decorator: add an instance of an interface together with its implementation. Add a decoration class
+Decorator: add an instance of an interface together with its implementation. Add a decoration class as a subclass of an 
+abstract decorator class

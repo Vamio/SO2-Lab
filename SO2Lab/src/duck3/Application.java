@@ -8,73 +8,77 @@ package duck3;
 
 import java.util.ArrayList;
 import java.awt.Color;
+import java.awt.Point;
 
 public class Application {
 
     private ArrayList<Duck> ducks;
     private ArrayList<Hat> hats;
-    private int[][] positions = new int[NUMBER_OF_DUCKS + 1][2];
-    private boolean positionsSet = false;
+    private ArrayList<Point> positions;
     private int width = 150;
     private int height = 60;
-    private static final int INITIAL_WIDTH = 150;
-    private static final int X = 80;
-    private static final int Y = 300;
-    private static final int NUMBER_OF_DUCKS = 5;
+    private int x = 80;
+    private int y = 300;
+    private static final int NUMBER_OF_DUCKS = 20; // actually +1
     private static final Color[] BODY_COLORS = { Color.WHITE, Color.GRAY, Color.YELLOW };
     private int glassesType = 0;
     private int hatType = 0;
-    private int bodyColorIndex = 0;
+    private int bodyColorType = 0;
 
     public Application() {
         ducks = new ArrayList<Duck>();
         hats = new ArrayList<Hat>();
+        positions = new ArrayList<Point>();
 
         buildDucks();
     }
 
-    private static final int CANVAS_WIDTH  = 1800;
-    private static final int CANVAS_HEIGHT = 700;
-
     private void buildDucks() {
         ducks.clear();
-        if (!positionsSet) {
-            positions[0][0] = X;
-            positions[0][1] = Y;
-            for (int i = 1; i <= NUMBER_OF_DUCKS; i++) {
+        
+        if (positions.isEmpty()) {
+            positions.add(new Point(x, y));
+            
+            for (int newDuck = 1; newDuck <= NUMBER_OF_DUCKS; newDuck++) {
+                Point pos;
                 boolean overlaps;
+                
                 do {
-                    positions[i][0] = RandomNumber.between(0, CANVAS_WIDTH);
-                    positions[i][1] = RandomNumber.between(height, CANVAS_HEIGHT);
+                    pos = new Point(RandomNumber.between(0, 1920), RandomNumber.between(height, 1080)); // between duck and screen size
                     overlaps = false;
-                    for (int j = 0; j < i; j++) {
-                        Duck a = new Duck(positions[i][0], positions[i][1], width, height);
-                        Duck b = new Duck(positions[j][0], positions[j][1], width, height);
+                    
+                    for (Point existing : positions) {
+                        Duck a = new Duck(pos.x, pos.y, width, height);
+                        Duck b = new Duck(existing.x, existing.y, width, height);
                         if (a.intersects(b)) {
                             overlaps = true;
                         }
                     }
                 } while (overlaps);
+                
+                positions.add(pos);
             }
-            positionsSet = true;
         }
-        for (int i = 0; i <= NUMBER_OF_DUCKS; i++) {
-            Duck candidate = new Duck(positions[i][0], positions[i][1], width, height);
+        
+        for (Point pos : positions) {
+            Duck newDuck = new Duck(pos.x, pos.y, width, height);
             boolean overlaps = false;
-            for (Duck existing : ducks) {
-                if (candidate.intersects(existing)) {
-                    overlaps = true;
-                }
+            
+            for(Duck existing: ducks) {
+            	if(newDuck.intersects(existing)) {
+            		overlaps = true;
+            	}
             }
-            if (!overlaps) {
-                ducks.add(candidate);
+            
+            if(!overlaps) {
+            	ducks.add(newDuck);
             }
         }
 
         for (Duck duck : ducks) {
             duck.setGlassesType(glassesType);
-            duck.setBodyColor(BODY_COLORS[bodyColorIndex]);
-            duck.setHeadColor(BODY_COLORS[bodyColorIndex]);
+            duck.setBodyColor(BODY_COLORS[bodyColorType]);
+            duck.setHeadColor(BODY_COLORS[bodyColorType]);
         }
         
         buildHats();
@@ -140,11 +144,11 @@ public class Application {
     }
     
     public void changeBodyColor() {
-    	bodyColorIndex = (bodyColorIndex + 1) % 3;
+    	bodyColorType = (bodyColorType + 1) % 3;
     	
     	for (Duck duck : ducks) {
-    		duck.setBodyColor(BODY_COLORS[bodyColorIndex]);
-    		duck.setHeadColor(BODY_COLORS[bodyColorIndex]);
+    		duck.setBodyColor(BODY_COLORS[bodyColorType]);
+    		duck.setHeadColor(BODY_COLORS[bodyColorType]);
     	}
     }
 }
