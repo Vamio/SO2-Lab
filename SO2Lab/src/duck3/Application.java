@@ -8,13 +8,13 @@ package duck3;
 
 import java.util.ArrayList;
 import java.awt.Color;
-import java.awt.Point;
 
 public class Application {
 
     private ArrayList<Duck> ducks;
     private ArrayList<Hat> hats;
-    private ArrayList<Point> positions;
+    private int[][] positions = new int[NUMBER_OF_DUCKS + 1][2];
+    private boolean positionsSet = false;
     private int width = 150;
     private int height = 60;
     private static final int INITIAL_WIDTH = 150;
@@ -29,7 +29,6 @@ public class Application {
     public Application() {
         ducks = new ArrayList<Duck>();
         hats = new ArrayList<Hat>();
-        positions = new ArrayList<Point>();
 
         buildDucks();
     }
@@ -39,28 +38,37 @@ public class Application {
 
     private void buildDucks() {
         ducks.clear();
-        if (positions.isEmpty()) {
-            positions.add(new Point(X, Y));
-            for (int newDuck = 1; newDuck <= NUMBER_OF_DUCKS; newDuck++) {
-                Point pos;
+        if (!positionsSet) {
+            positions[0][0] = X;
+            positions[0][1] = Y;
+            for (int i = 1; i <= NUMBER_OF_DUCKS; i++) {
                 boolean overlaps;
                 do {
-                    pos = new Point(RandomNumber.between(0, CANVAS_WIDTH),
-                                    RandomNumber.between(height, CANVAS_HEIGHT));
+                    positions[i][0] = RandomNumber.between(0, CANVAS_WIDTH);
+                    positions[i][1] = RandomNumber.between(height, CANVAS_HEIGHT);
                     overlaps = false;
-                    for (Point existing : positions) {
-                        Duck a = new Duck(pos.x, pos.y, width, height);
-                        Duck b = new Duck(existing.x, existing.y, width, height);
+                    for (int j = 0; j < i; j++) {
+                        Duck a = new Duck(positions[i][0], positions[i][1], width, height);
+                        Duck b = new Duck(positions[j][0], positions[j][1], width, height);
                         if (a.intersects(b)) {
                             overlaps = true;
                         }
                     }
                 } while (overlaps);
-                positions.add(pos);
             }
+            positionsSet = true;
         }
-        for (Point pos : positions) {
-            ducks.add(new Duck(pos.x, pos.y, width, height));
+        for (int i = 0; i <= NUMBER_OF_DUCKS; i++) {
+            Duck candidate = new Duck(positions[i][0], positions[i][1], width, height);
+            boolean overlaps = false;
+            for (Duck existing : ducks) {
+                if (candidate.intersects(existing)) {
+                    overlaps = true;
+                }
+            }
+            if (!overlaps) {
+                ducks.add(candidate);
+            }
         }
 
         for (Duck duck : ducks) {
