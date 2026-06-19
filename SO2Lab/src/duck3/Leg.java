@@ -2,7 +2,8 @@ package duck3;
 
 /* A class responsible for a duck's leg
  * 
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 import java.awt.Color;

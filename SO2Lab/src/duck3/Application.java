@@ -2,10 +2,12 @@ package duck3;
 
 /* A class where ducks are being drawn
  *
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 import java.util.ArrayList;
+import java.awt.Color;
 
 public class Application {
 
@@ -16,8 +18,10 @@ public class Application {
     private int x = 80;
     private int y = 300;
     private static final int NUMBER_OF_DUCKS = 5;
+    private static final Color[] BODY_COLORS = { Color.WHITE, Color.GRAY, Color.YELLOW };
     private int glassesType = 0;
     private int hatType = 0;
+    private int bodyColorIndex = 0;
 
     public Application() {
         ducks = new ArrayList<Duck>();
@@ -28,6 +32,7 @@ public class Application {
 
     private void buildDucks() {
         ducks.clear();
+        // Duck 0 is created
         ducks.add(new Duck(x, y, width, height));
         for (int newDuck = 1; newDuck <= NUMBER_OF_DUCKS; newDuck++) {
             int newX = x + width * newDuck * 2;
@@ -43,6 +48,8 @@ public class Application {
 
         for (Duck duck : ducks) {
             duck.setGlassesType(glassesType);
+            duck.setBodyColor(BODY_COLORS[bodyColorIndex]);
+            duck.setHeadColor(BODY_COLORS[bodyColorIndex]);
         }
         
         buildHats();
@@ -83,6 +90,8 @@ public class Application {
     public void makeBigger() {
         width += 5;
         height += 2;
+        x -= 5;
+        y -= 2;
         buildDucks();
     }
 
@@ -90,6 +99,8 @@ public class Application {
         if (width != 0 || height != 0) {
             width -= 5;
             height -= 2;
+            x += 5;
+            y += 2;
             buildDucks();
         }
     }
@@ -105,5 +116,14 @@ public class Application {
     public void changeHats() {
         hatType = (hatType + 1) % 3;
         buildHats();
+    }
+    
+    public void changeBodyColor() {
+    	bodyColorIndex = (bodyColorIndex + 1) % 3;
+    	
+    	for (Duck duck : ducks) {
+    		duck.setBodyColor(BODY_COLORS[bodyColorIndex]);
+    		duck.setHeadColor(BODY_COLORS[bodyColorIndex]);
+    	}
     }
 }

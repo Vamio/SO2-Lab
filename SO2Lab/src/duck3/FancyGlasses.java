@@ -2,7 +2,8 @@ package duck3;
 
 /* A subclass of Glasses for fancy pink glasses
  *
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 import java.awt.Color;

@@ -2,13 +2,15 @@ package duck3;
 
 /* A class which assembles the body of a duck
  * 
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 import java.awt.Color;
 
 public class Body {
 	private int x, y, width, height;
+	private Color color = Color.WHITE;
 	private Leg legLeft; // composition
 	private Leg legRight; // composition
 	private Wing wing; // composition
@@ -46,16 +48,24 @@ public class Body {
 		tail = new Tail(tailX, tailY, tailX1, tailY1, tailX2, tailY2);
 	}
 	
+	public void setColor(Color c) {
+		color = c;
+		wing.setColor(c);
+		tail.setColor(c);
+	}
+	
 	public void draw() {
 		// drawing tail under the body 
+		Canvas.PEN.setColor(color);
 		tail.draw();
 		// drawing the body
 		Canvas.PEN.drawOval(x, y, width, height);
-		Canvas.PEN.setColor(Color.white);
+		Canvas.PEN.setColor(color);
 		Canvas.PEN.fillOval(x, y, width, height);
 		// other body parts
 		legLeft.draw();
 		legRight.draw();
+		Canvas.PEN.setColor(color);
 		wing.draw();
 		
 	}

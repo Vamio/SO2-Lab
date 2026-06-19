@@ -2,7 +2,8 @@ package duck3;
 
 /* Random number generator, copied from the lab 2 manual
  * 
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 public class RandomNumber {

@@ -2,7 +2,8 @@ package duck3;
 
 /* A class responsible for a duck's eye
  * 
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 public class Eye {

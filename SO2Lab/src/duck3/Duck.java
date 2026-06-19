@@ -2,10 +2,12 @@ package duck3;
 
 /* A class where a duck is assembled
  *
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 import java.awt.Point;
+import java.awt.Color;
 
 public class Duck implements LocatedRectangle {
 
@@ -65,6 +67,14 @@ public class Duck implements LocatedRectangle {
         int glassesWidth = headHeight / 3;
         int glassesHeight = headWidth / 3;
         head.setGlasses(makeGlasses(type, glassesX, glassesY, glassesHeight, glassesWidth));
+    }
+    
+    public void setBodyColor(Color c) {
+    	body.setColor(c);
+    }
+    
+    public void setHeadColor(Color c) {
+    	head.setColor(c);
     }
 
     public void draw() {

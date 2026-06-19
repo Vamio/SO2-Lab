@@ -24,12 +24,12 @@ public class Canvas extends JFrame implements ActionListener{
 	public static Graphics PEN;
 	private CanvasPanel canvasPanel;
 	private Application myApp;
-	
 	private JButton btnSizePlus; 
 	private JButton btnSizeMinus;
 	private JButton btnNewGlasses;
 	private JButton btnNewHat;
 	private JButton btnQuit;
+	private JButton btnBodyColor;
 	
 	private class CanvasPanel extends JPanel {
 		@Override
@@ -55,8 +55,9 @@ public class Canvas extends JFrame implements ActionListener{
 		btnPanel.add(new JLabel("Styling", JLabel.CENTER));
 		btnNewGlasses = createButton("Change Glasses", btnPanel);
 		btnNewHat = createButton("Change Hats", btnPanel);
+		btnBodyColor = createButton("Change Body Color", btnPanel);
 		btnQuit = createButton("Quit", btnPanel);
-		
+
 		Dimension screenSize = getToolkit().getScreenSize();
 		
 		setBounds(0, 0, screenSize.width, screenSize.height);
@@ -85,6 +86,11 @@ public class Canvas extends JFrame implements ActionListener{
 			else if(e.getSource() == btnNewHat) {
 				// Change Hats button
 				myApp.changeHats();
+				canvasPanel.repaint();
+			}
+			else if(e.getSource() == btnBodyColor) {
+				// Change Body Color button
+				myApp.changeBodyColor();
 				canvasPanel.repaint();
 			}
 			else if(e.getSource() == btnQuit) {

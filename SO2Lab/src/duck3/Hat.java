@@ -2,7 +2,8 @@ package duck3;
 
 /* Superclass for hat accessories
  *
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 public class Hat {

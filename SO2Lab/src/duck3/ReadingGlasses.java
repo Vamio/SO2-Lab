@@ -2,7 +2,8 @@ package duck3;
 
 /* A subclass of Glasses for classic reading glasses
  * 
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 public class ReadingGlasses extends Glasses{

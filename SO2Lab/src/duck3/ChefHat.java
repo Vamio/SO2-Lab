@@ -2,7 +2,8 @@ package duck3;
 
 /* A subclass of Hat representing a chef's hat
  *
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 import java.awt.Color;

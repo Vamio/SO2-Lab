@@ -2,7 +2,8 @@ package duck3;
 
 /* A superclass for glasses
  * 
- * Authors: Soinikov, Nikita
+ * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
+ * Date: 19.06.2026
  */
 
 public class Glasses {
