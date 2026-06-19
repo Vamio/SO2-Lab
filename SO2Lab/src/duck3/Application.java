@@ -15,8 +15,9 @@ public class Application {
     private ArrayList<Hat> hats;
     private int width = 150;
     private int height = 60;
-    private int x = 80;
-    private int y = 300;
+    private static final int INITIAL_WIDTH = 150;
+    private static final int X = 80;
+    private static final int Y = 300;
     private static final int NUMBER_OF_DUCKS = 5;
     private static final Color[] BODY_COLORS = { Color.WHITE, Color.GRAY, Color.YELLOW };
     private int glassesType = 0;
@@ -33,10 +34,10 @@ public class Application {
     private void buildDucks() {
         ducks.clear();
         // Duck 0 is created
-        ducks.add(new Duck(x, y, width, height));
+        ducks.add(new Duck(X, Y, width, height));
         for (int newDuck = 1; newDuck <= NUMBER_OF_DUCKS; newDuck++) {
-            int newX = x + width * newDuck * 2;
-            int newY = y;
+            int newX = X + INITIAL_WIDTH * newDuck * 2;
+            int newY = Y;
 
             Duck next = new Duck(newX, newY, width, height);
             Duck previous = ducks.get(ducks.size() - 1);
@@ -90,17 +91,13 @@ public class Application {
     public void makeBigger() {
         width += 5;
         height += 2;
-        x -= 5;
-        y -= 2;
         buildDucks();
     }
 
     public void makeSmaller() {
-        if (width != 0 || height != 0) {
+        if (width > 5 && height > 2) {
             width -= 5;
             height -= 2;
-            x += 5;
-            y += 2;
             buildDucks();
         }
     }
