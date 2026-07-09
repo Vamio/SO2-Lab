@@ -1,9 +1,6 @@
 package duck3;
 
-/* A concrete decorator which puts a hat on a duck.
- * The hat sits on top of the head, so this decorator also
- * enlarges the bounding box upwards by the hat height.
- * type: 0 = chef hat, 1 = cap, 2 = bowtie
+/* A decorator which puts a hat on a duck.
  *
  * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
  * Date: 19.06.2026

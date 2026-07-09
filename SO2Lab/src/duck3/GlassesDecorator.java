@@ -1,7 +1,6 @@
 package duck3;
 
-/* A concrete decorator which puts a pair of glasses on a duck.
- * type: 0 = reading, 1 = sun, 2 = fancy
+/* A decorator which puts a pair of glasses on a duck.
  *
  * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
  * Date: 19.06.2026

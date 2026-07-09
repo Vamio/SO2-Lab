@@ -1,8 +1,6 @@
 package duck3;
 
-/* The abstract decorator: wraps another DuckPlain and delegates
- * everything to it. Concrete decorators override draw() to add
- * their own decoration on top.
+/* An abstract decorator: wraps DuckPlain.
  *
  * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
  * Date: 19.06.2026
@@ -12,7 +10,7 @@ import java.awt.Color;
 import java.awt.Point;
 
 public abstract class DuckDecorator implements DuckPlain {
-	protected DuckPlain duck; // the wrapped component
+	protected DuckPlain duck; 
 
 	public DuckDecorator(DuckPlain duck) {
 		this.duck = duck;

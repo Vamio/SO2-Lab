@@ -1,7 +1,6 @@
 package duck3;
 
-/* A test program for the decorator pattern.
- * Fills the scene with all kinds of variations side by side:
+/* A test program for the decorator pattern. Fills the scene with all kinds of variations of the ducks.
  *
  * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
  * Date: 19.06.2026

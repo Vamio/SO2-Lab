@@ -1,9 +1,6 @@
 package duck3;
 
 /* A class where a plain duck is assembled.
- * The concrete component of the decorator pattern:
- * no glasses, no hat, default colors.
- * Variations are added by wrapping it into DuckDecorator subclasses.
  *
  * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
  * Date: 19.06.2026

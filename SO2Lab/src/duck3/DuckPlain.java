@@ -1,8 +1,6 @@
 package duck3;
 
-/* The component interface of the decorator pattern.
- * A plain duck (Duck) implements it directly;
- * decorators (DuckDecorator subclasses) wrap another DuckPlain.
+/* Interface of the duck decorator pattern.
  *
  * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
  * Date: 19.06.2026

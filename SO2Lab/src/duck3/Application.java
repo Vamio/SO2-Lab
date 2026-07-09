@@ -1,8 +1,6 @@
 package duck3;
 
-/* A class where ducks are being drawn.
- * Plain ducks are wrapped into decorators (glasses, hat,
- * eye color, head color) according to the current types.
+/* A class where ducks are being drawn, and plain ducks are wrapped into decorators. 
  *
  * Authors: Soinikov, Nikita, Onyewuenyi, Stephen
  * Date: 19.06.2026
