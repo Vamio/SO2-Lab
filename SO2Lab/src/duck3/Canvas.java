@@ -30,6 +30,8 @@ public class Canvas extends JFrame implements ActionListener{
 	private JButton btnNewHat;
 	private JButton btnQuit;
 	private JButton btnBodyColor;
+	private JButton btnHeadColor;
+	private JButton btnEyeColor;
 	
 	private class CanvasPanel extends JPanel {
 		@Override
@@ -56,6 +58,8 @@ public class Canvas extends JFrame implements ActionListener{
 		btnNewGlasses = createButton("Change Glasses", btnPanel);
 		btnNewHat = createButton("Change Hats", btnPanel);
 		btnBodyColor = createButton("Change Body Color", btnPanel);
+		btnHeadColor = createButton("Change Head Color", btnPanel);
+		btnEyeColor  = createButton("Change Eye Color", btnPanel);
 		btnPanel.add(new JLabel("", JLabel.CENTER)); // Empty JLabel for spacing
 		btnQuit = createButton("Quit", btnPanel);
 		
@@ -92,6 +96,16 @@ public class Canvas extends JFrame implements ActionListener{
 			else if(e.getSource() == btnBodyColor) {
 				// Change Body Color button
 				myApp.changeBodyColor();
+				canvasPanel.repaint();
+			}
+			else if(e.getSource() == btnHeadColor) {
+				// Change Head Color button
+				myApp.changeHeadColor();
+				canvasPanel.repaint();
+			}
+			else if(e.getSource() == btnEyeColor) {
+				// Change Eye Color button
+				myApp.changeEyeColor();
 				canvasPanel.repaint();
 			}
 			else if(e.getSource() == btnQuit) {

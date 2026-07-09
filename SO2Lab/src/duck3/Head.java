@@ -14,7 +14,6 @@ public class Head {
 	private Beak beak; // composition
 	private Neck neck; // composition
 	private Eye eye; // composition
-	private Glasses aPairOfGlasses; // aggregation
 	
 	public Head(int x, int y, int width, int height) {
 		this.x = x;
@@ -43,13 +42,13 @@ public class Head {
 		eye = new Eye(eyeX, eyeY, eyeWidth, eyeHeight);
 	}
 	
-	public void setGlasses(Glasses glasses) {
-	    this.aPairOfGlasses = glasses;
-	}
-	
 	public void setColor(Color c) {
 		color = c;
 		neck.setColor(c);
+	}
+
+	public void setEyeColor(Color c) {
+		eye.setColor(c);
 	}
 	
 	public void draw() {
@@ -64,7 +63,5 @@ public class Head {
 		beak.draw();
 		// drawing an eye
 		eye.draw();
-		// wearing glasses
-		aPairOfGlasses.draw();
 	}
 }
