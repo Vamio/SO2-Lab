@@ -48,10 +48,7 @@ public class DecoratorTest {
                 new HatDecorator(
                     new GlassesDecorator(
                         new EyeColorDecorator(
-                            new HeadColorDecorator(makePlain(type, 4), HEAD_COLORS[type]),
-                            EYE_COLORS[type]),
-                        type),
-                    type));
+                            new HeadColorDecorator(makePlain(type, 4), HEAD_COLORS[type]), EYE_COLORS[type]), type), type));
         }
     }
 
