@@ -7,7 +7,6 @@ package duck3;
  */
 
 import java.util.ArrayList;
-import java.awt.Color;
 import java.awt.Point;
 
 public class Application {
@@ -25,15 +24,11 @@ public class Application {
     
     private static final int NUMBER_OF_DUCKS = 20; // actually +1
     
-    private static final Color[] BODY_COLORS = { Color.WHITE, Color.GRAY, Color.YELLOW };
-    private static final Color[] HEAD_COLORS = { Color.WHITE, Color.GRAY, Color.YELLOW };
-    private static final Color[] EYE_COLORS = { Color.BLACK, Color.GREEN, Color.BLUE };
-    
     private int glassesType = 0;
     private int hatType = 0;
-    private int bodyColorType = 0;
-    private int headColorType = 0;
-    private int eyeColorType = 0;
+    private BodyColor bodyColor = BodyColor.WHITE;
+    private BodyColor headColor = BodyColor.WHITE;
+    private EyeColor eyeColor = EyeColor.BLACK;
 
     public Application() {
         plainDucks = new ArrayList<Duck>();
@@ -96,12 +91,12 @@ public class Application {
     private void decorateDucks() {
         ducks.clear();
         for (Duck duck : plainDucks) {
-            duck.setBodyColor(BODY_COLORS[bodyColorType]);
+            duck.setBodyColor(bodyColor.getColor());
             ducks.add(
                 new HatDecorator(
                     new GlassesDecorator(
                         new EyeColorDecorator(
-                            new HeadColorDecorator(duck, HEAD_COLORS[headColorType]), EYE_COLORS[eyeColorType]), glassesType),hatType));
+                            new HeadColorDecorator(duck, headColor.getColor()), eyeColor.getColor()), glassesType),hatType));
         }
     }
 
@@ -156,7 +151,17 @@ public class Application {
         	return;
         }
     	
-        bodyColorType = (bodyColorType + 1) % 3;
+        switch (bodyColor) {
+            case WHITE:
+                bodyColor = BodyColor.GRAY;
+                break;
+            case GRAY:
+                bodyColor = BodyColor.YELLOW;
+                break;
+            case YELLOW:
+                bodyColor = BodyColor.WHITE;
+                break;
+        }
         decorateDucks();
     }
 
@@ -165,7 +170,17 @@ public class Application {
         	return;
         }
     	
-        headColorType = (headColorType + 1) % 3;
+        switch (headColor) {
+            case WHITE:
+                headColor = BodyColor.GRAY;
+                break;
+            case GRAY:
+                headColor = BodyColor.YELLOW;
+                break;
+            case YELLOW:
+                headColor = BodyColor.WHITE;
+                break;
+        }
         decorateDucks();
     }
 
@@ -174,7 +189,17 @@ public class Application {
         	return;
         }
     	
-        eyeColorType = (eyeColorType + 1) % 3;
+        switch (eyeColor) {
+            case BLACK:
+                eyeColor = EyeColor.GREEN;
+                break;
+            case GREEN:
+                eyeColor = EyeColor.BLUE;
+                break;
+            case BLUE:
+                eyeColor = EyeColor.BLACK;
+                break;
+        }
         decorateDucks();
     }
 }
