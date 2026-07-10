@@ -101,10 +101,7 @@ public class Application {
                 new HatDecorator(
                     new GlassesDecorator(
                         new EyeColorDecorator(
-                            new HeadColorDecorator(duck, HEAD_COLORS[headColorType]),
-                            EYE_COLORS[eyeColorType]),
-                        glassesType),
-                    hatType));
+                            new HeadColorDecorator(duck, HEAD_COLORS[headColorType]), EYE_COLORS[eyeColorType]), glassesType),hatType));
         }
     }
 
@@ -115,14 +112,20 @@ public class Application {
     }
 
     public void makeBigger() {
-        if (TEST_MODE) return;
+        if (TEST_MODE) {
+        	return;
+        }
+        
         width += 5;
         height += 2;
         buildDucks();
     }
 
     public void makeSmaller() {
-        if (TEST_MODE) return;
+    	if (TEST_MODE) {
+        	return;
+        }
+    	
         if (width > 5 && height > 2) {
             width -= 5;
             height -= 2;
@@ -131,31 +134,46 @@ public class Application {
     }
 
     public void changeGlasses() {
-        if (TEST_MODE) return;
+    	if (TEST_MODE) {
+        	return;
+        }
+    	
         glassesType = (glassesType + 1) % 3;
         decorateDucks();
     }
 
     public void changeHats() {
-        if (TEST_MODE) return;
+    	if (TEST_MODE) {
+        	return;
+        }
+    	
         hatType = (hatType + 1) % 3;
         decorateDucks();
     }
 
     public void changeBodyColor() {
-        if (TEST_MODE) return;
+    	if (TEST_MODE) {
+        	return;
+        }
+    	
         bodyColorType = (bodyColorType + 1) % 3;
         decorateDucks();
     }
 
     public void changeHeadColor() {
-        if (TEST_MODE) return;
+    	if (TEST_MODE) {
+        	return;
+        }
+    	
         headColorType = (headColorType + 1) % 3;
         decorateDucks();
     }
 
     public void changeEyeColor() {
-        if (TEST_MODE) return;
+    	if (TEST_MODE) {
+        	return;
+        }
+    	
         eyeColorType = (eyeColorType + 1) % 3;
         decorateDucks();
     }
